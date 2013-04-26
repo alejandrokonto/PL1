@@ -22,7 +22,7 @@ main(){
       int i,j,k,tail,min,head,heightDiff, SIZE, SPECIES, *heightParser;
       Player *canditates;
       heightDiff=0;
-      fp = fopen("test.txt", "r");
+      fp = fopen("basket2.txt", "r");
       if(fp==NULL){
          printf("Problem locating the input file\n");
       }
@@ -39,13 +39,13 @@ main(){
 		
 			fscanf(fp,"%d %d\n",&canditates[i].species, &canditates[i].height);
 		}
-           printf("efdafds");
+          
       close(fp);
         
       
        quicksort(canditates,0,SIZE-1);
         
-       printf("kai edw");
+       
        
        /*initialize Player pointers to their starting values*/
        i=1;
@@ -61,12 +61,11 @@ main(){
 			   i++;
 			   }
 			   k++;
-       } printf("kai edw231");
+       } 
+      
        head = k-1;
        min = canditates[head].height - canditates[tail].height;
-      printf("Tail:%d Head:%d\nMinimun difference so far:%d (heightDiff is %d)\n",tail,head,min, heightDiff);  	   
-   /* printf("the parser goes like this:\n");
-    displayParser(heightParser,SPECIES);*/
+
 		
 		/*begin the actual parsing*/  
         while(head<SIZE-1){
@@ -101,15 +100,15 @@ main(){
 	  
 	   
     
-     printf("Tail:%d Head:%d\nMinimun difference so far:%d (heightDiff is %d)\n",tail,head,min, heightDiff);      
+    
       
 	}
    
-   printf("oops did it again\n");
+  
    heightDiff = canditates[head].height - canditates[tail].height;
        if( heightDiff < min)min = heightDiff;
 	  
-     printf("Tail:%d Head:%d\nMinimun difference so far:%d (heightDiff is %d)\n",tail,head,min, heightDiff); 
+     printf("Tail:%d Head:%d\nMinimun difference so far:%d\n",tail,head,min);
 	   
 }
 
